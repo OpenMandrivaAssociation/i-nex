@@ -1,23 +1,27 @@
 Summary:	System information tool
 Name:		i-nex
 Version:	0.5.2
-Release:	1
+Release:	2
 Group:		System/Configuration/Hardware
 License:	LGPLv3+
 Url:		https://launchpad.net/i-nex
 Source0:	https://launchpad.net/%{name}/trunk/%{version}/+download/%{name}_%{version}.tar.gz
+# Just to make sure we have all these in repositories
 BuildRequires:	gambas3-devel
 BuildRequires:	gambas3-gb-desktop
 BuildRequires:	gambas3-gb-form-dialog
 BuildRequires:	gambas3-gb-form
 BuildRequires:	gambas3-gb-gui
+BuildRequires:	gambas3-gb-gtk
 BuildRequires:	gambas3-gb-image
+BuildRequires:	gambas3-gb-qt4
 BuildRequires:	gambas3-gb-settings
 BuildRequires:	imagemagick
 Requires:	gambas3-gb-desktop
 Requires:	gambas3-gb-form-dialog
 Requires:	gambas3-gb-form
 Requires:	gambas3-gb-gui
+Requires:	gambas3-gb-gtk
 Requires:	gambas3-gb-image
 Requires:	gambas3-gb-qt4
 Requires:	gambas3-gb-settings
