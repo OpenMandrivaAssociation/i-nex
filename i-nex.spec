@@ -14,7 +14,7 @@ BuildRequires:	gambas3-gb-desktop
 BuildRequires:	gambas3-gb-form-dialog
 BuildRequires:	gambas3-gb-form
 BuildRequires:	gambas3-gb-gui
-BuildRequires:	gambas3-gb-gtk
+BuildRequires:	gambas3-gb-gtk3
 BuildRequires:	gambas3-gb-image
 BuildRequires:	gambas3-gb-qt5
 BuildRequires:	gambas3-gb-settings
