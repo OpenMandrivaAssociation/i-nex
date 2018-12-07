@@ -1,11 +1,13 @@
+%define oname I-Nex
+
 Summary:	System information tool
 Name:		i-nex
-Version:	0.5.2
-Release:	3
+Version:	7.6.0
+Release:	1
 Group:		System/Configuration/Hardware
 License:	LGPLv3+
 Url:		https://launchpad.net/i-nex
-Source0:	https://launchpad.net/%{name}/trunk/%{version}/+download/%{name}_%{version}.tar.gz
+Source0:	https://github.com/%{name}/I-Nex/archive/%{version}.tar.gz
 # Just to make sure we have all these in repositories
 BuildRequires:	gambas3-devel
 BuildRequires:	gambas3-gb-desktop
@@ -14,9 +16,11 @@ BuildRequires:	gambas3-gb-form
 BuildRequires:	gambas3-gb-gui
 BuildRequires:	gambas3-gb-gtk
 BuildRequires:	gambas3-gb-image
-BuildRequires:	gambas3-gb-qt4
+BuildRequires:	gambas3-gb-qt5
 BuildRequires:	gambas3-gb-settings
 BuildRequires:	imagemagick
+BuildRequires:  pastebinit
+BuildRequires:	pkgconfig(libcpuid)
 Requires:	gambas3-gb-desktop
 Requires:	gambas3-gb-form-dialog
 Requires:	gambas3-gb-form
@@ -34,7 +38,7 @@ on your system and displays it using an user interface similar to the popular
 Windows tool CPU-Z.
 
 %prep
-%setup -q -n %{name}
+%setup -q -n %{oname}-%{version}
 
 %build
 cd src/%{name}
