@@ -41,8 +41,10 @@ Windows tool CPU-Z.
 %setup -q -n %{oname}-%{version}
 
 %build
+pushd %{oname}
+autoreconf -fi
 %configure2_5x
-
+popd
 %make \
 	STATIC=false \
 	CFLAGS="%{optflags}"
