@@ -41,48 +41,14 @@ Windows tool CPU-Z.
 %setup -q -n %{oname}-%{version}
 
 %build
-cd src/%{name}
-gbc3 -eagtpmv
-gba3
+%configure2_5x
+
+%make \
+	STATIC=false \
+	CFLAGS="%{optflags}"
 
 %install
-mkdir -p %{buildroot}%{_bindir}
-install -m 0755 src/i-nex/i-nex.gambas %{buildroot}%{_bindir}
-
-# Launcher script
-cat > %{buildroot}%{_bindir}/%{name} << EOF
-#!/bin/sh
-env LIBOVERLAY_SCROLLBAR=0 %{_bindir}/i-nex.gambas
-EOF
-chmod 0755 %{buildroot}%{_bindir}/%{name}
-
-# install menu entry
-mkdir -p %{buildroot}%{_datadir}/applications/
-cat > %{buildroot}%{_datadir}/applications/%{name}.desktop << EOF
-[Desktop Entry]
-Version=1.0
-Name=I-Nex
-Comment=I-Nex, a system information tool
-Exec=i-nex
-Icon=i-nex
-Terminal=false
-Type=Application
-StartupNotify=true
-Categories=System;Utility;
-EOF
-
-# install menu icons
-for N in 16 32 48 64 128;
-do
-convert src/i-nex/logo/i-nex.0.4.x.png -resize ${N}x${N} $N.png;
-install -D -m 0644 16.png %{buildroot}%{_iconsdir}/hicolor/${N}x${N}/apps/%{name}.png
-done
-
-# pastebinit
-mkdir -p %{buildroot}%{_datadir}/%{name}/pastebinit
-cp -rf pastebin.d utils pastebinit{,.xml} release.conf test.sh %{buildroot}%{_datadir}/%{name}/pastebinit
-chmod 0755 %{buildroot}%{_datadir}/%{name}/pastebinit/test.sh
-chmod 0755 %{buildroot}%{_datadir}/%{name}/pastebinit/utils/pbput
+%makeinstall_std
 
 %files
 %{_bindir}/%{name}*
