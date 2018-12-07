@@ -25,9 +25,9 @@ Requires:	gambas3-gb-desktop
 Requires:	gambas3-gb-form-dialog
 Requires:	gambas3-gb-form
 Requires:	gambas3-gb-gui
-Requires:	gambas3-gb-gtk
+Requires:	gambas3-gb-gtk3
 Requires:	gambas3-gb-image
-Requires:	gambas3-gb-qt4
+Requires:	gambas3-gb-qt5
 Requires:	gambas3-gb-settings
 Requires:	gambas3-runtime
 BuildArch:	noarch
@@ -50,7 +50,47 @@ popd
 	CFLAGS="%{optflags}"
 
 %install
-%makeinstall_std
+%make_install
+
+# install menu entries
+mkdir -p %{buildroot}%{_datadir}/applications/
+cat > %{buildroot}%{_datadir}/applications/%{name}.desktop << EOF
+[Desktop Entry]
+Version=1.0
+Name=I-Nex
+Comment=I-Nex, a system information tool
+Exec=i-nex
+Icon=i-nex
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=System;Utility;
+EOF
+
+cat > %{buildroot}%{_datadir}/applications/%{name}-library.desktop << EOF
+[Desktop Entry]
+Version=1.0
+Name=I-Nex Library
+Comment=I-Nex System Library Information
+Exec=%{name} --library
+Icon=%{name}
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=System;Utility;
+EOF
+
+# install menu icons
+for N in 16 32 48 64 128;
+do
+convert %{oname}/%{name}/logo/i-nex.0.4.x.png -resize ${N}x${N} $N.png;
+install -D -m 0644 16.png %{buildroot}%{_iconsdir}/hicolor/${N}x${N}/apps/%{name}.png
+done
+
+# not needed
+rm -rf %{buildroot}%{_defaultdocdir}/%{name}
+
+
 
 %files
 %{_bindir}/%{name}*
