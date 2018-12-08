@@ -8,7 +8,7 @@ Group:		System/Configuration/Hardware
 License:	LGPLv3+
 Url:		https://launchpad.net/i-nex
 #Source0:	https://github.com/%{name}/I-Nex/archive/%{version}/%{oname}-%{version}.tar.gz
-Source:		%{oname}-master-08.18.2018.zip
+Source:		%{oname}-master-08.12.2018.zip
 # Just to make sure we have all these in repositories
 BuildRequires:	gambas3-devel
 BuildRequires:	gambas3-gb-desktop
