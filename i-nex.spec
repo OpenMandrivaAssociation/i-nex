@@ -41,6 +41,11 @@ Windows tool CPU-Z.
 %prep
 %setup -q -n %{oname}-master
 
+# fix png rgb 
+pushd %{oname}/%{name}/logo
+find . -type f -name "*.png" -exec convert {} -strip {} \;
+popd
+
 %build
 pushd %{oname}
 autoreconf -fi
