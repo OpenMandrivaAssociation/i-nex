@@ -87,11 +87,11 @@ Categories=System;Utility;
 EOF
 
 # install menu icons
-for N in 16 32 48 64 128;
-do
-convert %{oname}/%{name}/logo/i-nex.0.4.x.png -resize ${N}x${N} $N.png;
-install -D -m 0644 16.png %{buildroot}%{_iconsdir}/hicolor/${N}x${N}/apps/%{name}.png
-done
+#for N in 16 32 48 64 128;
+#do
+#convert %{oname}/%{name}/logo/i-nex.0.4.x.png -resize ${N}x${N} $N.png;
+#install -D -m 0644 16.png %{buildroot}%{_iconsdir}/hicolor/${N}x${N}/apps/%{name}.png
+#done
 
 # not needed
 rm -rf %{buildroot}%{_defaultdocdir}/%{name}
