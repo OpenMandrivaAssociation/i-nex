@@ -9,6 +9,7 @@ License:	LGPLv3+
 Url:		https://launchpad.net/i-nex
 #Source0:	https://github.com/%{name}/I-Nex/archive/%{version}/%{oname}-%{version}.tar.gz
 Source:		%{oname}-master-08.12.2018.zip
+Patch0:		i-nex-Makefile.patch
 # Just to make sure we have all these in repositories
 BuildRequires:	gambas3-devel
 BuildRequires:	gambas3-gb-desktop
@@ -40,6 +41,7 @@ Windows tool CPU-Z.
 
 %prep
 %setup -q -n %{oname}-master
+%autosetup -p1 
 
 # fix png rgb 
 pushd %{oname}/%{name}/logo
