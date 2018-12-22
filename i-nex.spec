@@ -42,7 +42,7 @@ Windows tool CPU-Z.
 
 %prep
 %setup -q -n %{oname}-master
-%autosetup -p0
+%patch1 -p0
 
 # fix png rgb 
 pushd %{oname}/%{name}/logo
