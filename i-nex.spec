@@ -104,6 +104,6 @@ rm -rf %{buildroot}%{_defaultdocdir}/%{name}
 %files
 %{_bindir}/%{name}*
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/%{name}
-%{_iconsdir}/hicolor/*/apps/%{name}.png
+#{_datadir}/%{name}
+#{_iconsdir}/hicolor/*/apps/%{name}.png
 
