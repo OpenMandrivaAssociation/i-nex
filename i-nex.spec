@@ -43,6 +43,7 @@ Windows tool CPU-Z.
 %prep
 %setup -q -n %{oname}-master
 %autosetup -p0
+rm .gitmodules
 
 # fix png rgb 
 pushd %{oname}/%{name}/logo
