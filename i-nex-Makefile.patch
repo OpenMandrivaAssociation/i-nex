@@ -1,0 +1,43 @@
+diff -up I-Nex-master/JSON/Makefile.fix_build I-Nex-master/JSON/Makefile
+--- I-Nex-master/JSON/Makefile.fix_build	2017-05-24 21:16:01.000000000 +0200
++++ I-Nex-master/JSON/Makefile	2017-10-23 17:10:34.223531318 +0200
+@@ -18,7 +18,7 @@ install-bin: install-bin-i-nex-edid
+ 
+ install-bin-i-nex-edid:
+ 	test -d $(DESTDIR)$(bindir) || mkdir $(DESTDIR)$(bindir)
+-	$(INSTALL) 0755 i-nex-edid $(DESTDIR)$(bindir)
++	$(INSTALL_DM) 0755 i-nex-edid $(DESTDIR)$(bindir)
+ clean:
+ 	@echo -e '$(ACTION_COLOR)Clean JSON$(NO_COLOR)'
+ 	$(RM_COM) $(RMFILE_OPT) i-nex-edid
+diff -up I-Nex-master/Makefile.fix_build I-Nex-master/Makefile
+--- I-Nex-master/Makefile.fix_build	2017-05-24 21:16:01.000000000 +0200
++++ I-Nex-master/Makefile	2017-10-23 17:08:12.910892293 +0200
+@@ -20,8 +20,8 @@ build-json:
+ install-desktop-files:
+ 	@echo -e '\033[1;32mCreate nedded dirs...\033[0m'
+ 	mkdir -p $(DESTDIR)$(PREFIX)/share/applications
+-	$(INSTALL) 0755 debian/i-nex.desktop $(DESTDIR)$(PREFIX)/share/applications/
+-	$(INSTALL) 0755 debian/i-nex-library.desktop $(DESTDIR)$(PREFIX)/share/applications/
++	$(INSTALL_DM) 0755 debian/i-nex.desktop $(DESTDIR)$(PREFIX)/share/applications/
++	$(INSTALL_DM) 0755 debian/i-nex-library.desktop $(DESTDIR)$(PREFIX)/share/applications/
+ 	
+ install-pixmaps:
+ 
+diff -up I-Nex-master/pixmaps/Makefile.fix_build I-Nex-master/pixmaps/Makefile
+--- I-Nex-master/pixmaps/Makefile.fix_build	2017-05-24 21:16:01.000000000 +0200
++++ I-Nex-master/pixmaps/Makefile	2017-10-23 17:07:26.049011999 +0200
+@@ -2,10 +2,10 @@
+ include ../i-nex.mk
+ install:
+ 	mkdir -p ${DESTDIR}$(PREFIX)/share/pixmaps
+-	${INSTALL} 644 i-nex.png $(DESTDIR)$(PREFIX)/share/pixmaps/
+-	${INSTALL} 644 i-nex-16.png $(DESTDIR)$(PREFIX)/share/pixmaps/
+-	${INSTALL} 644 i-nex-32.png $(DESTDIR)$(PREFIX)/share/pixmaps/
+-	${INSTALL} 644 i-nex-128.png $(DESTDIR)$(PREFIX)/share/pixmaps/
++	$(INSTALL_DM) 644 i-nex.png $(DESTDIR)$(PREFIX)/share/pixmaps/
++	$(INSTALL_DM) 644 i-nex-16.png $(DESTDIR)$(PREFIX)/share/pixmaps/
++	$(INSTALL_DM) 644 i-nex-32.png $(DESTDIR)$(PREFIX)/share/pixmaps/
++	$(INSTALL_DM) 644 i-nex-128.png $(DESTDIR)$(PREFIX)/share/pixmaps/
+ 	
+ uninstall:
