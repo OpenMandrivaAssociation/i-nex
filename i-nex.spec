@@ -3,7 +3,7 @@
 Summary:	System information tool
 Name:		i-nex
 Version:	7.6.0
-Release:	1
+Release:	0.git.08.12.2018
 Group:		System/Configuration/Hardware
 License:	LGPLv3+
 Url:		https://launchpad.net/i-nex
