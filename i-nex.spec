@@ -105,4 +105,12 @@ rm -rf %{buildroot}%{_defaultdocdir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 #{_datadir}/%{name}
 #{_iconsdir}/hicolor/*/apps/%{name}.png
-
+%{_udevrulesdir}/i2c_smbus.rules
+%{_datadir}/applications/i-nex-library.desktop
+%{_mandir}/man1/i-nex.1.*
+%{_mandir}/man1/i-nex.gambas.1.*
+%{_mandir}/man1/i-nex-edid.1.*
+%{_datadir}/pixmaps/i-nex-16.png
+%{_datadir}/pixmaps/i-nex-32.png
+%{_datadir}/pixmaps/i-nex-128.png
+%{_datadir}/pixmaps/i-nex.png
