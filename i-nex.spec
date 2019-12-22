@@ -2,14 +2,12 @@
 
 Summary:	System information tool
 Name:		i-nex
-Version:	7.6.0
-Release:	0.git.08.12.2018
+Version:	7.6.1
+Release:	1
 Group:		System/Configuration/Hardware
 License:	LGPLv3+
 Url:		https://launchpad.net/i-nex
-#Source0:	https://github.com/%{name}/I-Nex/archive/%{version}/%{oname}-%{version}.tar.gz
-Source:		%{oname}-master-08.12.2018.zip
-#Patch0:		i-nex-Makefile.patch
+Source0:	https://github.com/%{name}/I-Nex/archive/%{version}/%{oname}-%{version}.tar.gz
 Patch1:		i-nex-makefile-p0.patch
 # Just to make sure we have all these in repositories
 BuildRequires:	gambas3-devel
@@ -40,7 +38,7 @@ on your system and displays it using an user interface similar to the popular
 Windows tool CPU-Z.
 
 %prep
-%setup -q -n %{oname}-master
+%setup -q -n %{oname}-%{version}
 %patch1 -p0
 
 # fix png rgb 
