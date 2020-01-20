@@ -3,7 +3,7 @@
 Summary:	System information tool
 Name:		i-nex
 Version:	7.6.1
-Release:	2
+Release:	3
 Group:		System/Configuration/Hardware
 License:	LGPLv3+
 Url:		https://launchpad.net/i-nex
@@ -19,6 +19,7 @@ BuildRequires:	gambas3-gb-gtk3
 BuildRequires:	gambas3-gb-image
 BuildRequires:	gambas3-gb-qt5
 BuildRequires:	gambas3-gb-settings
+BuildRequires:  gambas3-gb-jit
 BuildRequires:	imagemagick
 BuildRequires:  pastebinit
 BuildRequires:	pkgconfig(libcpuid)
@@ -31,6 +32,7 @@ Requires:	gambas3-gb-image
 Requires:	gambas3-gb-qt5
 Requires:	gambas3-gb-settings
 Requires:	gambas3-runtime
+Requires:	gambas3-gb-jit
 
 %description
 An application that gathers information for hardware components available
