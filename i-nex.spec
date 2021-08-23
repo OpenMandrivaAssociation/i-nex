@@ -33,6 +33,7 @@ Requires:	gambas3-gb-qt5
 Requires:	gambas3-gb-settings
 Requires:	gambas3-runtime
 Requires:	gambas3-gb-jit
+Requires:	pkgconfig(libcpuid)
 
 %description
 An application that gathers information for hardware components available
