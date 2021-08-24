@@ -9,6 +9,10 @@ License:	LGPLv3+
 Url:		https://launchpad.net/i-nex
 Source0:	https://github.com/%{name}/I-Nex/archive/%{version}/%{oname}-%{version}.tar.gz
 Patch1:		i-nex-makefile-p0.patch
+# Arch
+Patch2:		Fix-error-if-proc-mtrr-doesn-t-exist.patch
+Patch3:		Fix-libcpuid-SOVERSION.patch
+Patch4:		Adapt-for-new-libcpuid-structure.patch
 # Just to make sure we have all these in repositories
 BuildRequires:	gambas3-devel
 BuildRequires:	gambas3-gb-desktop
@@ -42,6 +46,9 @@ Windows tool CPU-Z.
 %prep
 %setup -q -n %{oname}-%{version}
 %patch1 -p0
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
 
 # fix png rgb 
 pushd %{oname}/%{name}/logo
