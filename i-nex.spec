@@ -3,7 +3,7 @@
 Summary:	System information tool
 Name:		i-nex
 Version:	7.6.1
-Release:	3
+Release:	4
 Group:		System/Configuration/Hardware
 License:	LGPLv3+
 Url:		https://launchpad.net/i-nex
@@ -58,9 +58,9 @@ popd
 %build
 pushd %{oname}
 autoreconf -fi
-%configure2_5x
+%configure
 popd
-%make \
+%make_build \
 	STATIC=false \
 	CFLAGS="%{optflags}"
 
