@@ -14,6 +14,11 @@ Patch2:		Fix-error-if-proc-mtrr-doesn-t-exist.patch
 Patch3:		Fix-libcpuid-SOVERSION.patch
 Patch4:		Adapt-for-new-libcpuid-structure.patch
 # Just to make sure we have all these in repositories
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	gambas3-devel
 BuildRequires:	gambas3-gb-desktop
 BuildRequires:	gambas3-gb-form-dialog
